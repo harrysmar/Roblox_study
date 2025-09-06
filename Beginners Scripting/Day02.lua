@@ -62,3 +62,23 @@ myGreatFunction()
 print(trueStatement)
 --이렇게 하면 trueStatement는 global변수가 아니기 때문에 오류가 난다.
 --따라서 local function안에 있는 local 변수 선언을 밖에다가도 한 번더 써주어야 한다.
+
+local function myGreatFunction()
+	local result = nil
+	--nil은 아무것도 없다는 것을 나타내는 특별한 값이다.
+	
+	if result == nil then
+		local result1 = true
+		print(result1)
+		
+	else 
+		local result2 = false
+		print(result2)
+		print(result1)
+		--result1은 if 블록에서만 사용할 수 있는 local 변수이다.
+	end
+end
+
+print(mySecondVariable)
+local mySecondVariable = "string"
+--이렇게하면 mySecondVariable를 선언하기전에 호출했기때문에 오류가 난다.
